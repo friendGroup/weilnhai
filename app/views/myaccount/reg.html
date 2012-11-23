@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>蔚蓝海</title>
+    <meta name="keywords" content="蔚蓝海" />
+    <meta name="description" content="蔚蓝海" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#nav ul:eq(0) li").each(function(index){
+                $(this).mouseover(function(){LoadNav(index);});
+            });
+            $("#banner").mouseover(function(){LoadNav(-1);});
+        });
+        function LoadNav(idx)
+        {
+            $("#nav ul:eq(0) li").attr("class","");
+            $("#nav div").hide();
+            
+            $("#nav ul:eq(0) li:eq("+idx+")").attr("class","sel");
+            
+            if(document.getElementById("tag"+idx)!=undefined)
+            {
+                $("#tag"+idx).css("left",(330+93*idx)+"px");
+                $("#tag"+idx).show();
+            }            
+        }
+        function addBookmark(title) 
+        {
+             var url=parent.location.href;
+             if (window.sidebar)              
+                window.sidebar.addPanel(title, url,"");               
+             else if( document.all ) 
+                window.external.AddFavorite( url, title);
+             else if( window.opera && window.print) 
+                return true;
+       }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <div id="logo"><img src="images/logo.jpg" /></div>
+            <div id="favnav">
+                <div id="fav"><a href="javascript:void(0)" onclick="addBookmark(document.title)">加入收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">登录</a> | &nbsp;<a href="#">免费注册</a></div>
+                <div id="nav">
+                    <ul>
+                        <li><a href="index.htm">网站首页</a></li>
+                        <li><a href="gouwu.htm">购物频道</a></li>
+                        <li><a href="#">服务收费</a></li>
+                        <li><a href="myAccount.htm">我的帐户</a></li>
+                        <li><a href="#">帮助支持</a></li>
+                        <li><a href="#">新闻资讯</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                    <div id="tag1" class="childmenu">
+                        <ul>
+                            <li><a href="sale.htm">销售和折扣</a></li>
+                            <li><a href="menu.htm">美国网站目录</a></li>
+                            <li><a href="#">购物贴士</a></li>
+                            <li><a href="#">海淘经验</a></li>
+                        </ul>
+                    </div>
+                    <div id="tag5" class="childmenu">
+                        <ul>
+                            <li><a href="#">最新公告</a></li>
+                            <li><a href="#">优惠活动</a></li>
+                            <li><a href="#">海关政策</a></li>
+                            <li><a href="#">协议条款</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="banner" style="height:100px;">
+            <img src="images/step4.jpg" />
+        </div>
+        
+        <div id="erjipnl">
+            <div id="lftpnl">
+                <div id="picpnl">
+                    <img src="images/a2.jpg" />
+                    <img src="images/a3.jpg" />
+                    <img src="images/a1.jpg" />
+                </div>
+            </div>            
+            <div id="rgtpnl">
+                <div class="r_tle">
+                    <div class="posi">您现在位置：<a href="index.htm">蔚蓝海</a> > 个人信息</div>
+                </div>
+                <div id="formzoom">
+                    <h1 style="border:none;text-indent:0px;height:auto;">注册<br/>立即获得2个您的专属美国地址。</h1>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="height:20px;border-bottom:solid 1px #dedede;"><span>* 为必填项</span> </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="width:100px;"><span>*</span> 电子邮件地址：</td>
+                                <td><input id="Text1" type="text" style="width:300px;" /> <img alt="这是你登录时的用户代码" src="images/mark.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span>*</span> 密 码：</td>
+                                <td><input id="Text2" type="password" style="width:300px;" /> <img alt="至少需要6位字符" src="images/mark.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span>*</span> 确认密码：</td>
+                                <td><input id="Password1" type="password" style="width:300px;" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span>*</span> 名 字：</td>
+                                <td><input id="Text3" type="text" style="width:300px;" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span>*</span> 姓：</td>
+                                <td><input id="Text4" type="text" style="width:300px;" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span>*</span> 联系电话：</td>
+                                <td><input id="Text5" type="text" style="width:300px;" /> <img alt="请确保电话号码正确，方便我们和您保持联系" src="images/mark.jpg" /></td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="border-bottom:solid 1px #dedede;">&nbsp;</td>
+                                <td align="left" style="border-bottom:solid 1px #dedede;height:60px;">
+                                    <input id="Checkbox1" type="checkbox" /><label for="Checkbox1">我已阅读并同意《用户协议》</label><br/>
+                                    <input id="Checkbox2" type="checkbox" /><label for="Checkbox2">我已阅读并同意《免责和理赔条款》</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">&nbsp;</td>
+                                <td>
+                                    <a href="javascript:alert('保存信息，由程序完成!');window.location.href='my_info_reg.htm'"><img src="images/btn_reg.jpg" /></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div id="btm">
+            <p><a href="about.htm">关于我们</a> |            
+            <a href="#">常见问题</a> | <a href="#">免责和理赔条款</a> |
+            <a href="#">商务合作</a> |
+            <a href="#">人才招聘</a> |
+            <a href="#" style="color:#c20f08;">官方微博</a>
+            <br/>
+            版权所有 Copyright <span style="font-size:12px;font-family:Arial;">&copy;</span> 2008-2012 weilanhai. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</body>
+</html>

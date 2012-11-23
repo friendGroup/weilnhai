@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>蔚蓝海</title>
+    <meta name="keywords" content="蔚蓝海" />
+    <meta name="description" content="蔚蓝海" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#nav ul:eq(0) li").each(function(index){
+                $(this).mouseover(function(){LoadNav(index);});
+            });
+            $("#banner").mouseover(function(){LoadNav(-1);});
+        });
+        function LoadNav(idx)
+        {
+            $("#nav ul:eq(0) li").attr("class","");
+            $("#nav div").hide();
+            
+            $("#nav ul:eq(0) li:eq("+idx+")").attr("class","sel");
+            
+            if(document.getElementById("tag"+idx)!=undefined)
+            {
+                $("#tag"+idx).css("left",(330+93*idx)+"px");
+                $("#tag"+idx).show();
+            }            
+        }
+        function addBookmark(title) 
+        {
+             var url=parent.location.href;
+             if (window.sidebar)              
+                window.sidebar.addPanel(title, url,"");               
+             else if( document.all ) 
+                window.external.AddFavorite( url, title);
+             else if( window.opera && window.print) 
+                return true;
+       }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <div id="logo"><img src="images/logo.jpg" /></div>
+            <div id="favnav">
+                <div id="fav"><a href="javascript:void(0)" onclick="addBookmark(document.title)">加入收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">登录</a> | &nbsp;<a href="#">免费注册</a></div>
+                <div id="nav">
+                    <ul>
+                        <li><a href="index.htm">网站首页</a></li>
+                        <li><a href="gouwu.htm">购物频道</a></li>
+                        <li><a href="#">服务收费</a></li>
+                        <li><a href="myAccount.htm">我的帐户</a></li>
+                        <li><a href="#">帮助支持</a></li>
+                        <li><a href="#">新闻资讯</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                    <div id="tag1" class="childmenu">
+                        <ul>
+                            <li><a href="sale.htm">销售和折扣</a></li>
+                            <li><a href="menu.htm">美国网站目录</a></li>
+                            <li><a href="#">购物贴士</a></li>
+                            <li><a href="#">海淘经验</a></li>
+                        </ul>
+                    </div>
+                    <div id="tag5" class="childmenu">
+                        <ul>
+                            <li><a href="#">最新公告</a></li>
+                            <li><a href="#">优惠活动</a></li>
+                            <li><a href="#">海关政策</a></li>
+                            <li><a href="#">协议条款</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="banner" style="height:100px;">
+            <img src="images/step4.jpg" />
+        </div>
+        
+        <div id="erjipnl">
+            <div id="lftpnl">
+                <div id="menu">
+                    <div class="item">
+                        <div class="cagname"><img src="images/gouwudingdan.jpg" /></div>
+                        <ul>
+                            <li><a href="myAccount.htm">购物单面板</a></li>
+                            <li><a href="order_current.htm">当前订单</a></li>
+                            <li><a href="order_history.htm">历史订单</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <div class="cagname"><img src="images/yundanguanli.jpg" /></div>
+                        <ul>
+                            <li><a href="report.htm">提交预报</a></li>
+                            <li><a href="view.htm">预报查询</a></li>
+                            <li><a href="product.htm">库存包裹</a></li>
+                            <li><a href="yundan.htm">提交运单</a></li>
+                            <li><a href="yundan_current.htm">当前运单</a></li>
+                            <li><a href="yundan_history.htm">历史运单</a></li>
+                            <li><a href="address.htm">地址薄</a></li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <div class="cagname"><img src="images/zhanghuguanli.jpg" /></div>
+                        <ul>
+                            <li><a href="my_info.htm">个人资料</a></li>
+                            <li><a href="update_pwd.htm">修改密码</a></li>
+                            <li><a href="add_money.htm">在线充值</a></li>
+                            <li><a href="caiwu_details.htm">财务明细</a></li>
+                            <li><a href="zhangdan.htm">电子账单</a></li>
+                            <li><a href="exit.htm">安全退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="picpnl">
+                    <img src="images/a2.jpg" />
+                    <img src="images/a3.jpg" />
+                    <img src="images/a1.jpg" />
+                </div>
+            </div>
+            <div id="rgtpnl">
+                <div class="r_tle">
+                    <div class="posi">您现在位置：<a href="index.htm">蔚蓝海</a> > BuyForMe订单 > 购物单面板</div>
+                </div>
+                <div id="formzoom">
+                    <h1>当前订单 </h1>
+                </div>
+            </div>
+        </div>
+        
+        <div id="btm">
+            <p><a href="about.htm">关于我们</a> |            
+            <a href="#">常见问题</a> | <a href="#">免责和理赔条款</a> |
+            <a href="#">商务合作</a> |
+            <a href="#">人才招聘</a> |
+            <a href="#" style="color:#c20f08;">官方微博</a>
+            <br/>
+            版权所有 Copyright <span style="font-size:12px;font-family:Arial;">&copy;</span> 2008-2012 weilanhai. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</body>
+</html>

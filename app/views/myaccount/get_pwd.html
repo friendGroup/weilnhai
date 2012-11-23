@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>蔚蓝海</title>
+    <meta name="keywords" content="蔚蓝海" />
+    <meta name="description" content="蔚蓝海" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.2.1.pack.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#nav ul:eq(0) li").each(function(index){
+                $(this).mouseover(function(){LoadNav(index);});
+            });
+            $("#banner").mouseover(function(){LoadNav(-1);});
+        });
+        function LoadNav(idx)
+        {
+            $("#nav ul:eq(0) li").attr("class","");
+            $("#nav div").hide();
+            
+            $("#nav ul:eq(0) li:eq("+idx+")").attr("class","sel");
+            
+            if(document.getElementById("tag"+idx)!=undefined)
+            {
+                $("#tag"+idx).css("left",(330+93*idx)+"px");
+                $("#tag"+idx).show();
+            }            
+        }
+        function addBookmark(title) 
+        {
+             var url=parent.location.href;
+             if (window.sidebar)              
+                window.sidebar.addPanel(title, url,"");               
+             else if( document.all ) 
+                window.external.AddFavorite( url, title);
+             else if( window.opera && window.print) 
+                return true;
+       }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <div id="logo"><img src="images/logo.jpg" /></div>
+            <div id="favnav">
+                <div id="fav"><a href="javascript:void(0)" onclick="addBookmark(document.title)">加入收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">登录</a> | &nbsp;<a href="#">免费注册</a></div>
+                <div id="nav">
+                    <ul>
+                        <li><a href="index.htm">网站首页</a></li>
+                        <li><a href="gouwu.htm">购物频道</a></li>
+                        <li><a href="#">服务收费</a></li>
+                        <li><a href="myAccount.htm">我的帐户</a></li>
+                        <li><a href="#">帮助支持</a></li>
+                        <li><a href="#">新闻资讯</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                    <div id="tag1" class="childmenu">
+                        <ul>
+                            <li><a href="sale.htm">销售和折扣</a></li>
+                            <li><a href="menu.htm">美国网站目录</a></li>
+                            <li><a href="#">购物贴士</a></li>
+                            <li><a href="#">海淘经验</a></li>
+                        </ul>
+                    </div>
+                    <div id="tag5" class="childmenu">
+                        <ul>
+                            <li><a href="#">最新公告</a></li>
+                            <li><a href="#">优惠活动</a></li>
+                            <li><a href="#">海关政策</a></li>
+                            <li><a href="#">协议条款</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="banner" style="height:100px;">
+            <img src="images/step4.jpg" />
+        </div>
+        
+        <div id="erjipnl">
+            <div id="logpnl">
+                <div class="ltle">忘记密码</div>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td align="right">注册的邮件地址</td>
+                        <td><input id="Text1" type="text" style="width:135px;" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" height="50px" align="right">                            
+                            <a href="javascript:alert('发送重置后的密码到邮件');window.location.href='login.htm';"><img src="images/btn_sub2.jpg" /></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="btm">
+            <p><a href="about.htm">关于我们</a> |            
+            <a href="#">常见问题</a> | <a href="#">免责和理赔条款</a> |
+            <a href="#">商务合作</a> |
+            <a href="#">人才招聘</a> |
+            <a href="#" style="color:#c20f08;">官方微博</a>
+            <br/>
+            版权所有 Copyright <span style="font-size:12px;font-family:Arial;">&copy;</span> 2008-2012 weilanhai. All Rights Reserved
+            </p>
+        </div>
+    </div>
+</body>
+</html>
