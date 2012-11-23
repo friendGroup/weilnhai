@@ -45,7 +45,7 @@
         <div id="top">
             <div id="logo"><a href="index.php"><img src="<?php echo base_url()?>app/views/images/logo.jpg" alt="蔚蓝海全方位物流整合平台" border="0" /></a></div>
             <div id="favnav">
-                <div id="fav"><a href="javascript:void(0)" onclick="addBookmark(document.title)">加入收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url() ?>app/views/login.php">登录</a> | &nbsp;<a href="user_reg.php">免费注册</a></div>
+                <div id="fav"><a href="javascript:void(0)" onclick="addBookmark(document.title)">加入收藏</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?= site_url("account/index")?>">登录</a> | &nbsp;<a href="user_reg.php">免费注册</a></div>
                 <div id="nav">
                     <ul>
                         <li><a href="index.php">网站首页</a></li>
